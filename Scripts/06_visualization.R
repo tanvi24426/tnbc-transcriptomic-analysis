@@ -133,19 +133,33 @@ volcano_data$minus_log10_padj <- -log10(
   volcano_data$padj
 )
 
+# Assign plotting symbols
+# 17 = Upregulated
+# 15 = Downregulated
+# 16 = Not significant
+volcano_symbols <- ifelse(
+  volcano_data$Significance == "Upregulated",
+  17,
+  ifelse(
+    volcano_data$Significance == "Downregulated",
+    15,
+    16
+  )
+)
+
 # Save volcano plot
 png(
   "Figures/Volcano_Plot_TNBC_vs_Normal.png",
-  width = 2000,
-  height = 1800,
+  width = 2200,
+  height = 2000,
   res = 250
 )
 
 plot(
   volcano_data$log2FoldChange,
   volcano_data$minus_log10_padj,
-  pch = 16,
-  cex = 0.5,
+  pch = volcano_symbols,
+  cex = 0.55,
   xlab = "log2 Fold Change",
   ylab = "-log10 Adjusted P-value",
   main = "Differential Expression: TNBC vs Normal"
@@ -160,6 +174,46 @@ abline(
 abline(
   h = -log10(0.05),
   lty = 2
+)
+
+# Identify the final prioritized genes
+label_indices <- which(
+  rownames(volcano_data) %in% final_gene_ids
+)
+
+# Add labels for the 10 prioritized genes
+if (length(label_indices) > 0) {
+  
+  label_symbols <- final_gene_symbols[
+    match(
+      rownames(volcano_data)[label_indices],
+      final_gene_ids
+    )
+  ]
+  
+  text(
+    volcano_data$log2FoldChange[label_indices],
+    volcano_data$minus_log10_padj[label_indices],
+    labels = label_symbols,
+    pos = 3,
+    cex = 0.7
+  )
+}
+
+# Add legend
+legend(
+  "topright",
+  legend = c(
+    "Upregulated",
+    "Downregulated",
+    "Not significant"
+  ),
+  pch = c(
+    17,
+    15,
+    16
+  ),
+  bty = "n"
 )
 
 dev.off()
@@ -268,7 +322,7 @@ par(
 
 
 # ------------------------------------------------------------
-# 7. TNBC gene–gene correlation heatmap
+# 7. TNBC gene-gene correlation heatmap
 # ------------------------------------------------------------
 
 # Extract only TNBC samples
@@ -310,7 +364,7 @@ pheatmap(
   cluster_cols = TRUE,
   display_numbers = TRUE,
   number_format = "%.2f",
-  main = "Gene–Gene Correlation in TNBC",
+  main = "Gene-Gene Correlation in TNBC",
   fontsize_row = 9,
   fontsize_col = 9
 )
