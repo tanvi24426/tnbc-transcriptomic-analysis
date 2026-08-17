@@ -1,0 +1,16 @@
+# R / RStudio files
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+# Large raw RNA-seq data
+Data/*.gz
+
+# Temporary files
+*.tmp
+*.temp
+
+# Operating system files
+.DS_Store
+Thumbs.db
