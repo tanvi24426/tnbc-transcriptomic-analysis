@@ -36,7 +36,7 @@ The analysis was restricted to matched Normal-TNBC samples.
 
 # Analysis Workflow
 
-The analysis was performed using **R** and organized into six sequential scripts.
+The analysis was performed using **R** and organized into nine sequential scripts.
 
 ```text
 01_explore_data.R
@@ -50,6 +50,12 @@ The analysis was performed using **R** and organized into six sequential scripts
 05_candidate_validation.R
         ↓
 06_visualization.R
+        ↓
+07_independent_validation.R
+        ↓
+08_molecular_signatures.R
+        ↓
+09_GSEA.R
 ```
 
 ### 1. Data Exploration and Sample Preparation
@@ -117,6 +123,84 @@ The analysis generated:
 - Candidate-gene heatmap
 - Candidate-gene boxplots
 - TNBC candidate-gene correlation heatmap
+
+### 7. Independent Validation
+
+`Scripts/07_independent_validation.R`
+
+The final ten-gene candidate panel was evaluated in an independent breast cancer cohort, **GSE52194**, containing:
+
+- **3 Normal samples**
+- **5 TNBC samples**
+
+The analysis evaluated expression patterns of the ten candidate genes between Normal and TNBC samples.
+
+The independent cohort was used to assess whether the candidate-gene expression patterns observed in the discovery cohort were also detectable in an external dataset.
+
+The analysis generated an independent validation expression figure and corresponding validation results.
+
+### 8. Molecular Signature Analysis
+
+`Scripts/08_molecular_signatures.R`
+
+The ten candidate genes were organized into two predefined molecular programs:
+
+| Molecular program | Genes |
+|---|---|
+| Proliferation | **CDC20, BUB1, TRIP13, PLK1, AURKB** |
+| Metabolic | **PNPLA2, PPARG, LIPE, LEP, CIDEC** |
+
+Signature scores were calculated for each sample and compared between Normal and TNBC groups using the Wilcoxon rank-sum test.
+
+### Discovery cohort
+
+- Proliferation signature: **p = 0.0009391**
+- Metabolic signature: **p = 0.0009391**
+
+### Independent cohort
+
+- Proliferation signature: **p = 0.03689**
+- Metabolic signature: **p = 0.03689**
+
+Both molecular programs showed significant differences between Normal and TNBC samples in the independent cohort, supporting replication of the two major transcriptional programs.
+
+### 9. Hallmark Gene Set Enrichment Analysis
+
+`Scripts/09_GSEA.R`
+
+Preranked Gene Set Enrichment Analysis (GSEA) was performed using the **DESeq2 test statistic** as the ranking metric and the **MSigDB Hallmark gene-set collection**.
+
+The analysis included:
+
+- **24,750 ranked genes**
+- **50 Hallmark pathways**
+- `fgsea` for preranked enrichment analysis
+
+Using an adjusted p-value threshold of **0.05**, the latest analysis identified:
+
+- **12 TNBC-enriched pathways**
+- **14 Normal-enriched pathways**
+- **26 significant pathways overall**
+
+The strongest TNBC-associated pathways included:
+
+- **G2M Checkpoint**
+- **E2F Targets**
+- **mTORC1 Signaling**
+- **MYC Targets**
+- **Glycolysis**
+- **Mitotic Spindle**
+
+The strongest Normal-associated pathways included:
+
+- **Adipogenesis**
+- **Myogenesis**
+- **Fatty Acid Metabolism**
+- **Oxidative Phosphorylation**
+- **Xenobiotic Metabolism**
+- **Bile Acid Metabolism**
+
+![Hallmark GSEA of top pathways](Figures/GSEA/Hallmark_GSEA_Top_Pathways.png)
 
 ---
 
@@ -339,6 +423,10 @@ The `Results/` directory contains:
 - Final ten-gene shortlist
 - Statistical validation results
 - TNBC correlation matrix
+- Independent validation results
+- Molecular signature scores and statistical tests
+- Hallmark GSEA results
+- TNBC-enriched and Normal-enriched GSEA pathways
 
 ---
 
@@ -348,7 +436,9 @@ The `Results/` directory contains:
 tnbc-transcriptomic-analysis/
 │
 ├── Data/
-│   └── Raw data
+│   ├── Raw data
+│   └── GSEA/
+│       └── h.all.v2026.1.Hs.symbols.gmt
 │
 ├── Scripts/
 │   ├── 01_explore_data.R
@@ -356,13 +446,20 @@ tnbc-transcriptomic-analysis/
 │   ├── 03_functional_enrichment.R
 │   ├── 04_candidate_prioritization.R
 │   ├── 05_candidate_validation.R
-│   └── 06_visualization.R
+│   ├── 06_visualization.R
+│   ├── 07_independent_validation.R
+│   ├── 08_molecular_signatures.R
+│   └── 09_GSEA.R
 │
 ├── Results/
-│   └── Analysis result tables
+│   ├── Analysis result tables
+│   ├── Molecular_Signatures/
+│   └── GSEA/
 │
 ├── Figures/
-│   └── Analysis visualizations
+│   ├── Analysis visualizations
+│   ├── Molecular_Signatures/
+│   └── GSEA/
 │
 ├── Interpretation/
 │   └── biological_interpretation.md
@@ -390,6 +487,12 @@ The analysis is organized into sequential R scripts that should be executed in t
 05_candidate_validation.R
         ↓
 06_visualization.R
+        ↓
+07_independent_validation.R
+        ↓
+08_molecular_signatures.R
+        ↓
+09_GSEA.R
 ```
 
 The project uses **GSE233242** as the source dataset.
@@ -400,6 +503,7 @@ The analysis was performed in R using packages including:
 - pheatmap
 - clusterProfiler
 - org.Hs.eg.db
+- fgsea
 
 Raw sequencing/count data are excluded from Git tracking where appropriate using `.gitignore`.
 
@@ -409,7 +513,7 @@ Raw sequencing/count data are excluded from Git tracking where appropriate using
 
 1. The final analysis included only **16 samples: 8 Normal and 8 TNBC**.
 2. The analysis identifies transcriptomic associations and does not establish causal relationships.
-3. Candidate validation was performed within the same cohort rather than an independent validation dataset.
+3. Independent validation was performed using GSE52194, but the validation cohort was small (3 Normal and 5 TNBC samples).
 4. TNBC-specific correlation analysis was based on only eight TNBC samples and should therefore be considered exploratory.
 5. The ten genes should be considered **candidate markers rather than clinically validated biomarkers**.
 6. Independent validation using larger cohorts and experimental studies is required.
@@ -435,4 +539,8 @@ The prioritized ten-gene panel captures both components:
 
 These genes and associated pathways provide a biologically coherent set of candidates for further investigation and independent validation.
 
-The analysis is intended as a **computational and hypothesis-generating study**, rather than a clinical biomarker validation study.
+The analysis is intended as a **computational and hypothesis-generating study**, rather than a clinical biomarker validation study. Independent validation and molecular signature analysis further supported the distinction between the proliferation-associated and lipid/metabolic programs.
+
+Hallmark GSEA provided pathway-level evidence consistent with these findings, with cell-cycle, E2F, MYC, mTORC1, glycolytic, and mitotic programs enriched toward TNBC, while adipogenic and lipid/metabolic programs were enriched toward Normal tissue.
+
+Together, these analyses provide a multi-level computational framework connecting differential expression, candidate-gene prioritization, independent validation, molecular signatures, and pathway-level enrichment.
