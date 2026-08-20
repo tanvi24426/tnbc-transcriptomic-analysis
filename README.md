@@ -88,6 +88,8 @@ Expression data were obtained from the **UCSC Xena GDC TCGA-BRCA STAR-TPM** data
         ↓
 09 Hallmark GSEA
         ↓
+10 Gene–Pathway Integration
+        ↓
 11 ROC/AUC Analysis
         ↓
 12 Network Analysis
@@ -278,6 +280,16 @@ Using an adjusted p-value threshold of 0.05:
 - Bile Acid Metabolism
 
 These results provide pathway-level support for the proliferation-versus-metabolic interpretation of the candidate panel.
+
+---
+
+### 10. Gene–Pathway Integration
+
+`Scripts/10_gene_pathway_integration.R`
+
+The prioritized candidate genes were integrated with enriched biological pathways to examine how individual candidates relate to the major molecular programs identified in the analysis.
+
+The analysis generated a candidate gene–pathway integration heatmap and related results linking the prioritized genes to enriched pathways.
 
 ---
 
@@ -607,10 +619,11 @@ tnbc-transcriptomic-analysis/
 │   ├── 07_independent_validation.R
 │   ├── 08_molecular_signatures.R
 │   ├── 09_GSEA.R
+│   ├── 10_gene_pathway_integration.R
 │   ├── 11_ROC_AUC_Analysis.R
 │   ├── 12_network_analysis.R
 │   ├── 13_Survival_Analysis.R
-│   └── 14_drug_target_analysis.R
+│   └── 14_Drug_Target_Analysis.R
 │
 ├── Results/
 │   ├── Molecular_Signatures/
@@ -689,8 +702,8 @@ Large raw datasets are excluded from Git tracking where appropriate using `.giti
 11. The ten genes should be considered candidate markers rather than clinically validated biomarkers.
 12. The candidate panel should be considered hypothesis-generating rather than an established clinical molecular signature.
 13. DGIdb associations represent database-reported drug–gene relationships and do not establish therapeutic efficacy or clinical suitability.
-14. Drug–target coverage is incomplete for the ten-gene panel because only 7 candidates returned usable interactions in the analyzed DGIdb query.
-15. Larger independent cohorts and experimental studies are required for further validation.
+14. Only 7 of the 10 prioritized genes returned usable drug associations in the analyzed DGIdb query.
+15. The number of recorded drug associations reflects database coverage and should not be interpreted as a measure of biological importance or therapeutic potential.
 
 ---
 
@@ -718,7 +731,9 @@ In TCGA-BRCA survival analysis, PLK1 showed the strongest nominal association wi
 
 DGIdb drug–target analysis added a translational layer, identifying reported drug associations for 7 candidate genes and highlighting PLK1, PPARG, and AURKB as candidates with substantial existing drug-association coverage. Several multi-target compounds connected candidate genes across the proliferation and metabolic programs. These findings are hypothesis-generating and do not establish therapeutic efficacy.
 
-Taken together, the results provide a multi-level computational framework connecting differential expression, functional enrichment, candidate-gene prioritization, molecular signatures, independent validation, network structure, classification performance, and survival association.
+Together, these analyses provide a multi-level computational framework connecting differential expression, functional enrichment, candidate-gene prioritization, independent validation, molecular signatures, pathway integration, classification performance, network analysis, survival association, and drug–target relationships.
 
-The findings are intended to generate testable biological hypotheses and candidate markers for further investigation rather than to establish clinically validated biomarkers.
+The drug–target analysis adds a translational hypothesis-generation layer, identifying substantial existing drug-association coverage for PLK1, PPARG, and AURKB and highlighting several multi-target compounds connecting the prioritized molecular programs.
+
+The overall analysis remains exploratory and hypothesis-generating. Larger independent cohorts, experimental validation, and pharmacological studies are required before the candidate genes or associated compounds can be considered clinically actionable.
 
