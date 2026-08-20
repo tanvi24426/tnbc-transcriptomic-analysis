@@ -410,7 +410,7 @@ These survival findings should therefore be considered exploratory.
 
 # 14. Drug–Target Analysis
 
-`Scripts/14_drug_target_analysis.R`
+`Scripts/14_Drug_Target_Analysis.R`
 
 DGIdb-based drug–target analysis was performed to add a translational layer to the prioritized ten-gene panel.
 
