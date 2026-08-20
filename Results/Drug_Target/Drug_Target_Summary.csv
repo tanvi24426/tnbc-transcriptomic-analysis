@@ -1,0 +1,473 @@
+"Drug","Number_of_Target_Genes","Target_Genes","Programs","Number_of_Sources"
+"AMORFRUTIN A",2,"PLK1, PPARG","Metabolic, Proliferation",1
+"BENZBROMARONE",2,"PLK1, PPARG","Metabolic, Proliferation",1
+"CHEMBL:CHEMBL184450",2,"PLK1, PPARG","Metabolic, Proliferation",1
+"ESTRADIOL VALERATE",2,"LEP, PPARG","Metabolic",2
+"GW7647",2,"PLK1, PPARG","Metabolic, Proliferation",1
+"NVP-TAE684",2,"AURKB, PLK1","Proliferation",1
+"TROGLITAZONE",2,"LEP, PPARG","Metabolic",4
+"(3Z)-N,N-DIMETHYL-2-OXO-3-(4,5,6,7-TETRAHYDRO-1H-INDOL-2-YLMETHYLIDENE)-2,3-DIHYDRO-1H-INDOLE-5-SULFONAMIDE",1,"AURKB","Proliferation",1
+"(4-CHLOROPHENYL)(MORPHOLINO)METHANETHIONE",1,"PLK1","Proliferation",1
+"(R)-16 [PMID: 32267688]",1,"PPARG","Metabolic",1
+"1,4-DIMETHOXYANTHRAQUINONE",1,"PLK1","Proliferation",1
+"15-DEOXY-&DELTA;-12,14-PROSTAGLANDIN J2",1,"PPARG","Metabolic",1
+"2,4-DIHYDROXYBENZOPHENONE",1,"PLK1","Proliferation",1
+"2,6-DIMETHOXYQUINONE",1,"PLK1","Proliferation",1
+"2-CHLORO-5-NITRO-N-PHENYLBENZAMIDE",1,"PPARG","Metabolic",1
+"2-PHENYLPHENOL",1,"PPARG","Metabolic",1
+"3,5-DIPHENYLISOXAZOLE",1,"PLK1","Proliferation",1
+"4-CHLOROMERCURIBENZOIC ACID",1,"PLK1","Proliferation",1
+"6-CHLORONICOTINIC ACID",1,"PLK1","Proliferation",1
+"9,10-PHENANTHRENEQUINONE",1,"PPARG","Metabolic",1
+"ABIETIC ACID",1,"PPARG","Metabolic",1
+"ACID BLUE 129",1,"PLK1","Proliferation",1
+"ACITRETIN",1,"PLK1","Proliferation",1
+"AD-5061",1,"PPARG","Metabolic",1
+"AD5075",1,"PPARG","Metabolic",1
+"ALDICARB",1,"PPARG","Metabolic",1
+"ALEGLITAZAR",1,"PPARG","Metabolic",2
+"ALISERTIB",1,"AURKB","Proliferation",2
+"ALPHAPRODINE HYDROCHLORIDE",1,"PLK1","Proliferation",1
+"AMBUNOL",1,"PLK1","Proliferation",1
+"AMG-900",1,"AURKB","Proliferation",5
+"ANHYDROUS TACROLIMUS",1,"LEP","Metabolic",1
+"ANTICOAGULANT AGENT",1,"LEP","Metabolic",1
+"ANTISENSE OLIGONUCLEOTIDES",1,"PLK1","Proliferation",1
+"APIGENIN",1,"PPARG","Metabolic",1
+"APOMORPHINE HYDROCHLORIDE",1,"PLK1","Proliferation",1
+"AR-AO-14418",1,"AURKB","Proliferation",1
+"ARHALOFENATE",1,"PPARG","Metabolic",1
+"AROTINOID ACID",1,"PLK1","Proliferation",1
+"ASPIRIN",1,"PPARG","Metabolic",1
+"AT-9283",1,"AURKB","Proliferation",1
+"AT9283",1,"AURKB","Proliferation",4
+"ATGLISTATIN",1,"PNPLA2","Metabolic",1
+"ATX08-001",1,"PPARG","Metabolic",1
+"AURORA B/C KINASE INHIBITOR GSK1070916A",1,"AURKB","Proliferation",1
+"AURORA KINASE INHIBITOR AMG 900",1,"AURKB","Proliferation",1
+"AURORA KINASE INHIBITOR II",1,"AURKB","Proliferation",1
+"AVE0847",1,"PPARG","Metabolic",1
+"BADGE",1,"PPARG","Metabolic",1
+"BALAGLITAZONE",1,"PPARG","Metabolic",1
+"BALSALAZIDE",1,"PPARG","Metabolic",1
+"BALSALAZIDE DISODIUM",1,"PPARG","Metabolic",1
+"BARASERTIB",1,"AURKB","Proliferation",6
+"BARASERTIB-HQPA",1,"AURKB","Proliferation",3
+"BARDOXOLONE",1,"PPARG","Metabolic",1
+"BARDOXOLONE METHYL",1,"PPARG","Metabolic",2
+"BAY 61-3606",1,"AURKB","Proliferation",1
+"BAY-320",1,"BUB1","Proliferation",1
+"BAY-524",1,"BUB1","Proliferation",1
+"BELUMOSUDIL",1,"AURKB","Proliferation",1
+"BENSERAZIDE HYDROCHLORIDE",1,"PLK1","Proliferation",1
+"BENSULIDE",1,"PPARG","Metabolic",1
+"BENZYL BENZOATE",1,"LIPE","Metabolic",1
+"BETUNOLIC ACID",1,"PLK1","Proliferation",1
+"BEXAROTENE",1,"PPARG","Metabolic",1
+"BEZAFIBRATE",1,"PPARG","Metabolic",1
+"BI 2536",1,"PLK1","Proliferation",1
+"BI-2536",1,"PLK1","Proliferation",5
+"BI-811283",1,"AURKB","Proliferation",2
+"BI-847325",1,"AURKB","Proliferation",2
+"BMS-345541",1,"AURKB","Proliferation",1
+"BMS-754807",1,"AURKB","Proliferation",1
+"BROMOCRIPTINE MESYLATE",1,"LEP","Metabolic",1
+"BX-795",1,"AURKB","Proliferation",1
+"CAFUSERTIB",1,"PLK1","Proliferation",1
+"CALCIUM CHANNEL BLOCKER",1,"LEP","Metabolic",1
+"CARVEDILOL",1,"LEP","Metabolic",1
+"CDK2 INHIBITOR IV",1,"AURKB","Proliferation",1
+"CEDIRANIB",1,"AURKB","Proliferation",1
+"CEFACLOR ANHYDROUS",1,"PLK1","Proliferation",1
+"CEFAMANDOLE SODIUM",1,"PLK1","Proliferation",1
+"CEFSULODIN SODIUM",1,"PLK1","Proliferation",1
+"CELECOXIB",1,"PPARG","Metabolic",1
+"CENISERTIB",1,"AURKB","Proliferation",6
+"CEPHALOCHROMIN",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL103583",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL116548",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL118378",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL118678",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL119878",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL121556",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL122355",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL1224755",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL1232076",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL125044",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL1255944",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL1271059",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL1287980",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL1306556",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL1310138",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL1310701",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL1362503",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL1363249",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL1412002",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL1426508",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL1451216",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL1459280",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL1486366",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL1489812",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL1503729",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL151797",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL1519374",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL1537417",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL1547715",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL1605629",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL164449",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL166112",1,"PPARG","Metabolic",1
+"CHEMBL:CHEMBL1701915",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL1707907",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL171699",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL175266",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL1833984",1,"PPARG","Metabolic",1
+"CHEMBL:CHEMBL1834951",1,"PPARG","Metabolic",1
+"CHEMBL:CHEMBL1871992",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL202243",1,"PPARG","Metabolic",1
+"CHEMBL:CHEMBL2057864",1,"PPARG","Metabolic",1
+"CHEMBL:CHEMBL2178583",1,"PPARG","Metabolic",1
+"CHEMBL:CHEMBL2178586",1,"PPARG","Metabolic",1
+"CHEMBL:CHEMBL2178596",1,"PPARG","Metabolic",1
+"CHEMBL:CHEMBL2208195",1,"PPARG","Metabolic",1
+"CHEMBL:CHEMBL2208196",1,"PPARG","Metabolic",1
+"CHEMBL:CHEMBL2208197",1,"PPARG","Metabolic",1
+"CHEMBL:CHEMBL223575",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL24983",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL274921",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL297304",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL312032",1,"PPARG","Metabolic",1
+"CHEMBL:CHEMBL374632",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL379975",1,"AURKB","Proliferation",1
+"CHEMBL:CHEMBL388979",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL421431",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL429095",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL462861",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL467987",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL495852",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL505670",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL515505",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL523200",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL527584",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL528373",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL530149",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL534535",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL535051",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL535331",1,"AURKB","Proliferation",1
+"CHEMBL:CHEMBL538798",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL546797",1,"AURKB","Proliferation",1
+"CHEMBL:CHEMBL548629",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL555260",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL565893",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL577365",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL582478",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL582764",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL584619",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL585279",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL585628",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL585654",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL587449",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL588749",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL590665",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL592124",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL592314",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL592558",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL599098",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL599165",1,"PPARG","Metabolic",1
+"CHEMBL:CHEMBL599255",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL599712",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL599924",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL599957",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL602807",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL602969",1,"PLK1","Proliferation",1
+"CHEMBL:CHEMBL84281",1,"PLK1","Proliferation",1
+"CHIGLITAZAR",1,"PPARG","Metabolic",2
+"CHLORFENAPYR",1,"PPARG","Metabolic",1
+"CHLORPYRIFOS",1,"PLK1","Proliferation",1
+"CHORIOGONADOTROPIN ALFA",1,"LIPE","Metabolic",1
+"CIGLITAZONE",1,"PPARG","Metabolic",2
+"CLOZAPINE",1,"LEP","Metabolic",1
+"CLX-0921",1,"PPARG","Metabolic",2
+"COMPOUND 1 [PMID: 21742770]",1,"AURKB","Proliferation",1
+"COMPOUND 10 [O'MAHONY ET AL., 2022]",1,"PPARG","Metabolic",1
+"COMPOUND 10 [PMID: 19402633]",1,"AURKB","Proliferation",1
+"COMPOUND 2 [PMID: 19097784]",1,"PLK1","Proliferation",1
+"COMPOUND 2-1-1 [PMID: 24900824]",1,"BUB1","Proliferation",1
+"COMPOUND 2-13-1 [PMID: 24900824]",1,"BUB1","Proliferation",1
+"COMPOUND 2-3-1 [PMID: 24900824]",1,"BUB1","Proliferation",1
+"COMPOUND 2-3-2 [PMID: 24900824]",1,"BUB1","Proliferation",1
+"COMPOUND 25 [PMID: 20855207]",1,"AURKB","Proliferation",1
+"COMPOUND 38 [PMID: 20817473]",1,"AURKB","Proliferation",1
+"COMPOUND 41 [PMID: 15026062]",1,"LIPE","Metabolic",1
+"COMPOUND 46 [PMID: 16451062]",1,"AURKB","Proliferation",1
+"COMPOUND 6 [PMID: 30125504]",1,"PLK1","Proliferation",1
+"COMPOUND 8 [PMID: 17480064]",1,"PLK1","Proliferation",1
+"COPANLISIB",1,"AURKB","Proliferation",1
+"CP-547632",1,"AURKB","Proliferation",1
+"CRYPTOTANSHINONE",1,"PLK1","Proliferation",1
+"CYC-116",1,"AURKB","Proliferation",2
+"CYC116",1,"AURKB","Proliferation",3
+"CYCLOSPORINE",1,"LEP","Metabolic",1
+"DACTOLISIB",1,"AURKB","Proliferation",1
+"DANUSERTIB",1,"AURKB","Proliferation",5
+"DASATINIB ANHYDROUS",1,"AURKB","Proliferation",1
+"DB959",1,"PPARG","Metabolic",1
+"DICHLOROPHEN",1,"PPARG","Metabolic",1
+"DICLOFENAC SODIUM",1,"PPARG","Metabolic",2
+"DIFFRACTAIC ACID",1,"PLK1","Proliferation",1
+"DIMETHENAMID",1,"PPARG","Metabolic",1
+"DIPYRIDAMOLE",1,"PLK1","Proliferation",1
+"DISULFIRAM",1,"PLK1","Proliferation",1
+"DOVITINIB",1,"AURKB","Proliferation",1
+"DUAL BRD4/PLK1 INHIBITOR 23",1,"PLK1","Proliferation",1
+"DUBERMATINIB",1,"AURKB","Proliferation",1
+"E319",1,"PPARG","Metabolic",1
+"EBSELEN",1,"PLK1","Proliferation",1
+"ECHINATIN",1,"PPARG","Metabolic",1
+"EDAGLITAZONE",1,"PPARG","Metabolic",1
+"EFATUTAZONE",1,"PPARG","Metabolic",1
+"EFATUTAZONE DIHYDROCHLORIDE",1,"PPARG","Metabolic",1
+"EFATUTAZONE HYDROCHLORIDE",1,"PPARG","Metabolic",1
+"ELAFIBRANOR",1,"PPARG","Metabolic",1
+"ELATOSIDE D",1,"PPARG","Metabolic",1
+"ELLAGIC ACID",1,"PLK1","Proliferation",1
+"EMBELIN",1,"PLK1","Proliferation",1
+"ENMD-2076",1,"AURKB","Proliferation",1
+"ENTRECTINIB",1,"AURKB","Proliferation",1
+"EP-0042",1,"AURKB","Proliferation",1
+"ERLOTINIB",1,"AURKB","Proliferation",1
+"ERYTHROMYCIN",1,"PLK1","Proliferation",1
+"ETALOCIB",1,"PPARG","Metabolic",1
+"EUFLAVINE",1,"PLK1","Proliferation",1
+"EUPATORIN",1,"AURKB","Proliferation",1
+"FARGLITAZAR",1,"PPARG","Metabolic",2
+"FASUDIL",1,"AURKB","Proliferation",1
+"FAT EMULSION",1,"LEP","Metabolic",1
+"FELODIPINE",1,"LEP","Metabolic",1
+"FENOFIBRIC ACID",1,"PPARG","Metabolic",1
+"FLUDIOXONIL",1,"PPARG","Metabolic",1
+"FLUORESCEIN DIACETATE",1,"PLK1","Proliferation",1
+"FLUORODIFEN",1,"PPARG","Metabolic",1
+"FLUOXASTROBIN",1,"PPARG","Metabolic",1
+"FLUPIRTINE MALEATE",1,"PLK1","Proliferation",1
+"FMOC-L-LEUCINE",1,"PPARG","Metabolic",1
+"FOLIC ACID",1,"LEP","Metabolic",1
+"G&OUML; 6976",1,"AURKB","Proliferation",1
+"GANCAONIN L",1,"PPARG","Metabolic",1
+"GEMFIBROZIL",1,"LEP","Metabolic",1
+"GENTIAN VIOLET CATION",1,"PPARG","Metabolic",1
+"GLABROL",1,"PPARG","Metabolic",1
+"GLABRONE",1,"PPARG","Metabolic",1
+"GLYBURIDE",1,"PPARG","Metabolic",1
+"GLYCYRRHETINIC ACID",1,"PPARG","Metabolic",1
+"GSK-461364A",1,"PLK1","Proliferation",2
+"GSK1070916",1,"AURKB","Proliferation",5
+"GSK2334470",1,"AURKB","Proliferation",1
+"GSK2646264",1,"AURKB","Proliferation",1
+"GSK269962A",1,"AURKB","Proliferation",1
+"GSK579289A",1,"PLK1","Proliferation",1
+"GUTHION",1,"PLK1","Proliferation",1
+"GW0072",1,"PPARG","Metabolic",1
+"GW1929",1,"PPARG","Metabolic",2
+"GW409544",1,"PPARG","Metabolic",1
+"GW441756X",1,"AURKB","Proliferation",1
+"GW501516",1,"PPARG","Metabolic",2
+"GW7845",1,"PPARG","Metabolic",1
+"GW843682X",1,"PLK1","Proliferation",1
+"GW853606",1,"PLK1","Proliferation",1
+"GW9578",1,"PPARG","Metabolic",1
+"GYROPHORIC ACID",1,"PLK1","Proliferation",1
+"HAEMATOXYLIN",1,"PLK1","Proliferation",1
+"HESPERADIN",1,"AURKB","Proliferation",2
+"HESPERETIN",1,"PPARG","Metabolic",1
+"HEXACHLOROPHENE",1,"PLK1","Proliferation",1
+"HMN-214",1,"PLK1","Proliferation",1
+"HYDROXYZINE PAMOATE",1,"PLK1","Proliferation",1
+"IBCASERTIB",1,"AURKB","Proliferation",1
+"ICOSAPENT ETHYL",1,"PPARG","Metabolic",1
+"IDARUBICIN HYDROCHLORIDE",1,"PLK1","Proliferation",1
+"ILORASERTIB",1,"AURKB","Proliferation",4
+"IMIDACLOPRID",1,"PLK1","Proliferation",1
+"IMIGLITAZAR",1,"PPARG","Metabolic",1
+"INAMRINONE",1,"PLK1","Proliferation",1
+"INDEGLITAZAR",1,"PPARG","Metabolic",1
+"INDOMETHACIN",1,"PPARG","Metabolic",1
+"INT131",1,"PPARG","Metabolic",2
+"IPRODIONE",1,"PPARG","Metabolic",1
+"ISOPROTERENOL",1,"LIPE","Metabolic",1
+"ISOSILYBIN A",1,"PPARG","Metabolic",1
+"JB991",1,"PPARG","Metabolic",1
+"JNJ-7706621",1,"AURKB","Proliferation",2
+"KANZONOL W",1,"PPARG","Metabolic",1
+"KANZONOL X",1,"PPARG","Metabolic",1
+"KENPAULLONE",1,"AURKB","Proliferation",1
+"KEPONE",1,"PPARG","Metabolic",1
+"KW-2449",1,"AURKB","Proliferation",2
+"L-165461",1,"PPARG","Metabolic",1
+"L-764406",1,"PPARG","Metabolic",1
+"L-783483",1,"PPARG","Metabolic",1
+"L-796449",1,"PPARG","Metabolic",1
+"LAMIVUDINE",1,"LEP","Metabolic",1
+"LANIFIBRANOR",1,"PPARG","Metabolic",2
+"LANSOPRAZOLE",1,"PLK1","Proliferation",1
+"LAPATINIB",1,"AURKB","Proliferation",1
+"LAS38096",1,"AURKB","Proliferation",1
+"LERIGLITAZONE",1,"PPARG","Metabolic",1
+"LEVOTHYROXINE",1,"PPARG","Metabolic",1
+"LG100754",1,"PPARG","Metabolic",1
+"LICOFLAVANONE A",1,"PPARG","Metabolic",1
+"LINIFANIB",1,"AURKB","Proliferation",1
+"LINOLEIC ACID",1,"PPARG","Metabolic",1
+"LIPID ENCAPSULATED ANTI-PLK1 SIRNA TKM-PLK1",1,"PLK1","Proliferation",1
+"LITHOCHOLIC ACID",1,"PLK1","Proliferation",1
+"LOBARIC ACID",1,"PLK1","Proliferation",1
+"LOMOFUNGIN",1,"PLK1","Proliferation",1
+"LOVASTATIN",1,"LEP","Metabolic",1
+"LY-465608",1,"PPARG","Metabolic",1
+"LY-510929",1,"PPARG","Metabolic",1
+"MBX-2044",1,"PPARG","Metabolic",2
+"MDG 548",1,"PPARG","Metabolic",1
+"MESALAMINE",1,"PPARG","Metabolic",3
+"METAGLIDASEN",1,"PPARG","Metabolic",1
+"METFORMIN",1,"PPARG","Metabolic",1
+"METHADONE HYDROCHLORIDE",1,"LEP","Metabolic",1
+"METHIMAZOLE",1,"LEP","Metabolic",1
+"METHOTREXATE",1,"PPARG","Metabolic",1
+"METHOXYCHLOR",1,"PPARG","Metabolic",1
+"METHYLENE BLUE ANHYDROUS",1,"PPARG","Metabolic",1
+"METRELEPTIN",1,"LEP","Metabolic",1
+"MIRTAZAPINE",1,"LEP","Metabolic",1
+"MITOGLITAZONE",1,"PPARG","Metabolic",1
+"MK-0533",1,"PPARG","Metabolic",1
+"MK-0767",1,"PPARG","Metabolic",1
+"MK-1496",1,"PLK1","Proliferation",2
+"MK-5108",1,"AURKB","Proliferation",2
+"MK-6592",1,"AURKB","Proliferation",1
+"MLN-8054",1,"AURKB","Proliferation",2
+"MLN0905",1,"PLK1","Proliferation",1
+"MRL20",1,"PPARG","Metabolic",1
+"MRL24",1,"PPARG","Metabolic",1
+"MURAGLITAZAR",1,"PPARG","Metabolic",2
+"MYCOPHENOLATE",1,"PPARG","Metabolic",1
+"MYRICETIN",1,"PLK1","Proliferation",1
+"N-OLEOYLDOPAMINE",1,"PLK1","Proliferation",1
+"NALED",1,"PPARG","Metabolic",1
+"NANAOMYCIN",1,"PLK1","Proliferation",1
+"NAVEGLITAZAR",1,"PPARG","Metabolic",2
+"NERVIANO",1,"AURKB","Proliferation",1
+"NETOGLITAZONE",1,"PPARG","Metabolic",2
+"NICOTINE POLACRILEX",1,"LEP","Metabolic",1
+"NIK INHIBITOR 12F",1,"AURKB","Proliferation",1
+"NMS-1286937",1,"PLK1","Proliferation",2
+"NTZDPA",1,"PPARG","Metabolic",1
+"OCHRATOXIN A",1,"PPARG","Metabolic",1
+"OLANZAPINE",1,"PPARG","Metabolic",1
+"OLEIC ACID",1,"PLK1","Proliferation",1
+"OLSALAZINE SODIUM",1,"PPARG","Metabolic",1
+"OMEPRAZOLE",1,"PLK1","Proliferation",1
+"OMS405",1,"PPARG","Metabolic",1
+"ONVANSERTIB",1,"PLK1","Proliferation",4
+"ORAL CONTRACEPTIVE",1,"LEP","Metabolic",1
+"OXIDOPAMINE HYDROCHLORIDE",1,"PLK1","Proliferation",1
+"OXYPHENBUTAZONE",1,"PLK1","Proliferation",1
+"OXYTETRACYCLINE ANHYDROUS",1,"PLK1","Proliferation",1
+"PAT5A",1,"PPARG","Metabolic",1
+"PATULIN",1,"PPARG","Metabolic",1
+"PAZOPANIB",1,"AURKB","Proliferation",1
+"PD166285",1,"AURKB","Proliferation",1
+"PDEF(98-114)H105A",1,"PNPLA2","Metabolic",1
+"PENTABROMOPHENOL",1,"PLK1","Proliferation",1
+"PENTACHLOROPHENOL",1,"PLK1","Proliferation",1
+"PENTOSALEN",1,"PLK1","Proliferation",1
+"PF-03814735",1,"AURKB","Proliferation",2
+"PF-562271",1,"AURKB","Proliferation",1
+"PGD2",1,"PPARG","Metabolic",1
+"PHENAMIPHOS",1,"PPARG","Metabolic",1
+"PHENOLPHTHALEIN",1,"PPARG","Metabolic",1
+"PHENOTHIAZINE",1,"PPARG","Metabolic",1
+"PHOSMET",1,"PLK1","Proliferation",1
+"PHYSODIC ACID",1,"PLK1","Proliferation",1
+"PIGMENT EPITHELIUM-DERIVED FACTOR",1,"PNPLA2","Metabolic",1
+"PIOGLITAZONE HYDROCHLORIDE",1,"PPARG","Metabolic",4
+"PLOGOSERTIB",1,"PLK1","Proliferation",1
+"POLO-LIKE KINASE 1 INHIBITOR GSK461364",1,"PLK1","Proliferation",3
+"PROCHLORAZ",1,"PPARG","Metabolic",1
+"PROPYLPARABEN",1,"PPARG","Metabolic",1
+"PROPYLPYRAZOLETRIOL",1,"PPARG","Metabolic",1
+"PROPYLTHIOURACIL",1,"LEP","Metabolic",1
+"PROROXAN HYDROCHLORIDE",1,"PLK1","Proliferation",1
+"PROTOPORPHYRIN",1,"PLK1","Proliferation",1
+"PSAMMAPLIN A",1,"PPARG","Metabolic",1
+"PURPURIN",1,"PLK1","Proliferation",1
+"PURPUROGALLIN",1,"PLK1","Proliferation",1
+"PYROGALLOL RED",1,"PLK1","Proliferation",1
+"PYRONIN Y",1,"PLK1","Proliferation",1
+"RAGAGLITAZAR",1,"PPARG","Metabolic",1
+"RALOXIFENE HYDROCHLORIDE",1,"PPARG","Metabolic",1
+"REGLITAZAR",1,"PPARG","Metabolic",1
+"RESVERATROL",1,"PPARG","Metabolic",1
+"RG-1530",1,"PLK1","Proliferation",1
+"RIGOSERTIB",1,"PLK1","Proliferation",2
+"RISPERIDONE",1,"LEP","Metabolic",1
+"RIVOGLITAZONE",1,"PPARG","Metabolic",1
+"RO3280",1,"PLK1","Proliferation",1
+"ROSIGLITAZONE",1,"PPARG","Metabolic",5
+"ROSIGLITAZONE MALEATE",1,"PPARG","Metabolic",1
+"ROTENONE",1,"PPARG","Metabolic",1
+"SAROGLITAZAR",1,"PPARG","Metabolic",2
+"SB-219993",1,"PPARG","Metabolic",1
+"SB-219994",1,"PPARG","Metabolic",1
+"SCLEROTIORIN",1,"PLK1","Proliferation",1
+"SEIMATOPOLIDE A",1,"PPARG","Metabolic",1
+"SELADELPAR",1,"PPARG","Metabolic",1
+"SENNOSIDE B",1,"PLK1","Proliferation",1
+"SHINFLAVANONE",1,"PPARG","Metabolic",1
+"SHINPTEROCARPIN",1,"PPARG","Metabolic",1
+"SIMVASTATIN",1,"PLK1","Proliferation",1
+"SLAZINIC ACID",1,"PLK1","Proliferation",1
+"SNS-314",1,"AURKB","Proliferation",1
+"SODELGLITAZAR",1,"PPARG","Metabolic",1
+"SODIUM BUTYRATE",1,"LIPE","Metabolic",1
+"SORAFENIB",1,"AURKB","Proliferation",1
+"SOTRASTAURIN",1,"PLK1","Proliferation",1
+"SP-600125",1,"AURKB","Proliferation",1
+"SPIRONOLACTONE",1,"PPARG","Metabolic",1
+"STAVUDINE",1,"PLK1","Proliferation",1
+"SUCCIMER",1,"PLK1","Proliferation",1
+"SULFASALAZINE",1,"PPARG","Metabolic",1
+"T0070907",1,"PPARG","Metabolic",1
+"TAGITININ A",1,"PPARG","Metabolic",1
+"TAK-632",1,"AURKB","Proliferation",1
+"TAK-901",1,"AURKB","Proliferation",2
+"TAK-960",1,"PLK1","Proliferation",2
+"TECNAZENE",1,"PPARG","Metabolic",1
+"TESAGLITAZAR",1,"PPARG","Metabolic",1
+"TETRADECYLTHIOACETIC ACID",1,"PPARG","Metabolic",1
+"THIMEROSAL",1,"PLK1","Proliferation",1
+"THIOGUANOSINE",1,"PLK1","Proliferation",1
+"THIRAM",1,"PLK1","Proliferation",1
+"TINENGOTINIB",1,"AURKB","Proliferation",1
+"TIROTUNDIN",1,"PPARG","Metabolic",1
+"TOPOTECAN HYDROCHLORIDE",1,"PLK1","Proliferation",1
+"TOSUFLOXACIN TOSYLATE",1,"PLK1","Proliferation",1
+"TOZASERTIB",1,"AURKB","Proliferation",5
+"TOZASERTIB LACTATE",1,"AURKB","Proliferation",1
+"TREPROSTINIL",1,"PPARG","Metabolic",2
+"TRIFLOXYSTROBIN",1,"PPARG","Metabolic",1
+"TRIPLE MODULATOR 10 [PMID: 29878767]",1,"PPARG","Metabolic",1
+"TRITIOZINE",1,"PLK1","Proliferation",1
+"TTP-607",1,"AURKB","Proliferation",1
+"TZD18",1,"PPARG","Metabolic",1
+"VALPROIC ACID",1,"LEP","Metabolic",1
+"VANDETANIB",1,"AURKB","Proliferation",1
+"VANITIOLIDE",1,"PLK1","Proliferation",1
+"VCE-004.3",1,"PPARG","Metabolic",1
+"VIC 1911",1,"AURKB","Proliferation",1
+"VOLASERTIB",1,"PLK1","Proliferation",5
+"WITHAFERIN A",1,"AURKB","Proliferation",1
+"WNY0824",1,"PLK1","Proliferation",1
+"WORTMANNIN",1,"PLK1","Proliferation",1
+"XMD-12",1,"AURKB","Proliferation",1
+"XY-06-007",1,"PLK1","Proliferation",1
+"ZAFIRLUKAST",1,"PPARG","Metabolic",1
+"ZM447439",1,"AURKB","Proliferation",2
+"[125I]SB-236636",1,"PPARG","Metabolic",1

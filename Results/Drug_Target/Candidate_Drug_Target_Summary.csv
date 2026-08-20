@@ -1,0 +1,8 @@
+"Gene","Program","Number_of_Drugs","Number_of_Interactions","Mean_Interaction_Score","Sources"
+"PLK1","Proliferation",189,190,0.0868522356302937,"DTC; MyCancerGenome; TALC; TTD; NCI; GuideToPharmacology; ChEMBL; TdgClinicalTrial"
+"PPARG","Metabolic",169,173,0.21033875166557,"DTC; TdgClinicalTrial; GuideToPharmacology; ChEMBL; PharmGKB; TEND; TALC"
+"AURKB","Proliferation",83,86,0.160647353240025,"GuideToPharmacology; DTC; TTD; MyCancerGenome; TALC; ChEMBL; CIViC; ClearityFoundationClinicalTrial; TdgClinicalTrial"
+"LEP","Metabolic",24,24,0.294088605266246,"PharmGKB; NCI"
+"BUB1","Proliferation",6,6,8.82199824888045,"GuideToPharmacology"
+"LIPE","Metabolic",5,5,4.78202716507885,"TTD; NCI; GuideToPharmacology"
+"PNPLA2","Metabolic",3,3,17.6439964977609,"GuideToPharmacology"

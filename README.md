@@ -2,63 +2,108 @@
 
 ## Overview
 
-This project presents a reproducible RNA-seq transcriptomic analysis comparing matched Normal breast tissue and triple-negative breast cancer (TNBC) samples.
+This project presents a reproducible transcriptomic analysis of **Triple-Negative Breast Cancer (TNBC)** integrating differential expression, functional enrichment, candidate-gene prioritization, independent validation, molecular signature analysis, pathway-level analysis, ROC/AUC evaluation, protein-protein interaction analysis, and survival analysis.
 
-The analysis aims to identify differentially expressed genes, characterize biological pathways associated with TNBC, and prioritize candidate genes representing distinct molecular programs.
+The primary discovery analysis compares matched Normal breast tissue and TNBC samples from **GEO dataset GSE233242**.
 
-The analysis identified two major transcriptional patterns:
+The analysis identified two major transcriptional programs associated with the TNBC state:
 
-- **Increased cell-cycle and proliferative activity**
-- **Reduced lipid-associated and metabolic activity**
+1. **Increased cell-cycle and proliferative activity**
+2. **Reduced lipid-associated and metabolic activity**
+
+These programs were used to prioritize and evaluate a final ten-gene candidate panel:
+
+**CDC20, BUB1, TRIP13, PLK1, AURKB, PNPLA2, PPARG, LIPE, LEP, and CIDEC**
+
+The project is intended as a **computational and hypothesis-generating study**, rather than a clinical biomarker validation study.
 
 ---
 
 ## Research Question
 
-> What transcriptional and biological pathways distinguish TNBC samples from Normal breast tissue, and which genes can be prioritized as candidate markers of these molecular differences?
+> What transcriptional and biological pathways distinguish TNBC from Normal breast tissue, and which genes and molecular programs can be prioritized as candidate markers of these differences?
+
+The analysis further evaluates whether the prioritized candidates show reproducible behavior in an independent cohort, whether they form coherent molecular networks, whether their expression can distinguish TNBC from Normal samples, and whether candidate-gene expression is associated with overall survival in a larger breast cancer cohort.
 
 ---
 
-## Dataset
+# Datasets
 
-The analysis used RNA-seq gene expression data from the **NCBI Gene Expression Omnibus (GEO) dataset GSE233242**.
+## Discovery Cohort
 
-The final analysis included:
+**GEO accession:** GSE233242
 
-- **8 Normal samples**
-- **8 TNBC samples**
-- **16 samples in total**
-- **39,376 genes/features**
+The discovery analysis used:
+
+- 8 Normal samples
+- 8 TNBC samples
+- 16 samples total
+- 39,376 genes/features
 
 The analysis was restricted to matched Normal-TNBC samples.
+
+## Independent Validation Cohort
+
+**GEO accession:** GSE52194
+
+The independent validation analysis contained:
+
+- 3 Normal samples
+- 5 TNBC samples
+
+This cohort was used to evaluate whether the expression direction of the ten candidate genes and the two molecular programs observed in the discovery cohort could be reproduced externally.
+
+## TCGA-BRCA Survival Cohort
+
+Overall survival analysis was performed using the **TCGA-BRCA** cohort.
+
+The survival analysis included:
+
+- **1,073 patients** with both expression and survival data
+- **150 observed deaths**
+- **923 censored observations**
+
+Expression data were obtained from the **UCSC Xena GDC TCGA-BRCA STAR-TPM** dataset.
 
 ---
 
 # Analysis Workflow
 
-The analysis was performed using **R** and organized into nine sequential scripts.
-
 ```text
-01_explore_data.R
+01 Data Exploration
         ↓
-02_differential_expression.R
+02 Differential Expression
         ↓
-03_functional_enrichment.R
+03 Functional Enrichment
         ↓
-04_candidate_prioritization.R
+04 Candidate Prioritization
         ↓
-05_candidate_validation.R
+05 Candidate Validation
         ↓
-06_visualization.R
+06 Visualization
         ↓
-07_independent_validation.R
+07 Independent Validation
         ↓
-08_molecular_signatures.R
+08 Molecular Signatures
         ↓
-09_GSEA.R
+09 Hallmark GSEA
+        ↓
+11 ROC/AUC Analysis
+        ↓
+12 Network Analysis
+        ↓
+13 Survival Analysis
+        ↓
+14 Drug–Target Analysis
+        ↓
+Integrated Interpretation
 ```
 
-### 1. Data Exploration and Sample Preparation
+---
+
+# Analysis Scripts
+
+## 01. Data Exploration
 
 `Scripts/01_explore_data.R`
 
@@ -69,54 +114,75 @@ The analysis was performed using **R** and organized into nine sequential script
 - Selected the final 16 samples
 - Examined sequencing depth and count distributions
 
-### 2. Differential Expression Analysis
+## 02. Differential Expression Analysis
 
 `Scripts/02_differential_expression.R`
 
 Differential expression analysis was performed using **DESeq2**.
 
-The analysis identified:
+The discovery analysis identified:
 
 - **2,011 upregulated genes**
 - **2,218 downregulated genes**
 
-### 3. Functional Enrichment
+## 03. Functional Enrichment
 
 `Scripts/03_functional_enrichment.R`
 
-Functional enrichment analysis was performed using:
+Functional enrichment was performed separately for upregulated and downregulated genes using:
 
-- Gene Ontology (GO) Biological Process
+- Gene Ontology Biological Process
 - KEGG pathway analysis
 
-Upregulated and downregulated genes were analyzed separately.
+The analysis identified strong enrichment of cell-cycle and mitotic processes among upregulated genes and lipid/metabolic pathways among downregulated genes.
 
-### 4. Candidate Gene Prioritization
+## 04. Candidate Gene Prioritization
 
 `Scripts/04_candidate_prioritization.R`
 
-Candidate genes were prioritized using differential expression, statistical significance, pathway association, and biological relevance.
+Candidate genes were prioritized using:
 
-Ten final candidates were selected.
+- Differential expression
+- Statistical significance
+- Pathway association
+- Biological relevance
 
-### 5. Candidate Validation
+Ten final candidate genes were selected.
+
+### Proliferation-associated genes
+
+- CDC20
+- BUB1
+- TRIP13
+- PLK1
+- AURKB
+
+### Lipid/metabolic-associated genes
+
+- PNPLA2
+- PPARG
+- LIPE
+- LEP
+- CIDEC
+
+## 05. Candidate Validation
 
 `Scripts/05_candidate_validation.R`
 
-The final candidates were evaluated using:
+The candidate genes were evaluated using:
 
 - Expression-level comparison between Normal and TNBC
 - Wilcoxon statistical testing
 - Multiple-testing correction
 - TNBC-specific Pearson correlation analysis
 
-### 6. Visualization
+## 06. Visualization
 
 `Scripts/06_visualization.R`
 
-The analysis generated:
+Generated visualizations including:
 
-- PCA plot
+- PCA
 - Differential-expression volcano plot
 - GO enrichment plots
 - KEGG enrichment plots
@@ -124,33 +190,44 @@ The analysis generated:
 - Candidate-gene boxplots
 - TNBC candidate-gene correlation heatmap
 
-### 7. Independent Validation
+## 07. Independent Validation
 
 `Scripts/07_independent_validation.R`
 
-The final ten-gene candidate panel was evaluated in an independent breast cancer cohort, **GSE52194**, containing:
+The ten-gene panel was evaluated in the independent **GSE52194** cohort.
 
-- **3 Normal samples**
-- **5 TNBC samples**
+The original expression direction was reproduced for **8 of the 10 genes**.
 
-The analysis evaluated expression patterns of the ten candidate genes between Normal and TNBC samples.
+### Direction reproduced
 
-The independent cohort was used to assess whether the candidate-gene expression patterns observed in the discovery cohort were also detectable in an external dataset.
+- CDC20
+- BUB1
+- TRIP13
+- PLK1
+- AURKB
+- PNPLA2
+- PPARG
+- LIPE
 
-The analysis generated an independent validation expression figure and corresponding validation results.
+### Direction not reproduced
 
-### 8. Molecular Signature Analysis
+- LEP
+- CIDEC
+
+The independent validation therefore provides **partial replication** of the candidate-gene expression program rather than complete replication of every candidate.
+
+## 08. Molecular Signature Analysis
 
 `Scripts/08_molecular_signatures.R`
 
-The ten candidate genes were organized into two predefined molecular programs:
+The ten genes were organized into two predefined molecular programs.
 
 | Molecular program | Genes |
 |---|---|
-| Proliferation | **CDC20, BUB1, TRIP13, PLK1, AURKB** |
-| Metabolic | **PNPLA2, PPARG, LIPE, LEP, CIDEC** |
+| Proliferation | CDC20, BUB1, TRIP13, PLK1, AURKB |
+| Metabolic | PNPLA2, PPARG, LIPE, LEP, CIDEC |
 
-Signature scores were calculated for each sample and compared between Normal and TNBC groups using the Wilcoxon rank-sum test.
+Signature scores were calculated for each sample.
 
 ### Discovery cohort
 
@@ -162,259 +239,306 @@ Signature scores were calculated for each sample and compared between Normal and
 - Proliferation signature: **p = 0.03689**
 - Metabolic signature: **p = 0.03689**
 
-Both molecular programs showed significant differences between Normal and TNBC samples in the independent cohort, supporting replication of the two major transcriptional programs.
+Both signatures therefore showed significant differences between Normal and TNBC samples in the analyzed cohorts.
 
-### 9. Hallmark Gene Set Enrichment Analysis
+## 09. Hallmark Gene Set Enrichment Analysis
 
 `Scripts/09_GSEA.R`
 
-Preranked Gene Set Enrichment Analysis (GSEA) was performed using the **DESeq2 test statistic** as the ranking metric and the **MSigDB Hallmark gene-set collection**.
+Preranked Hallmark GSEA was performed using the DESeq2 test statistic as the ranking metric.
 
 The analysis included:
 
-- **24,750 ranked genes**
-- **50 Hallmark pathways**
+- 24,750 ranked genes
+- 50 Hallmark pathways
 - `fgsea` for preranked enrichment analysis
 
-Using an adjusted p-value threshold of **0.05**, the latest analysis identified:
+Using an adjusted p-value threshold of 0.05:
 
-- **12 TNBC-enriched pathways**
-- **14 Normal-enriched pathways**
-- **26 significant pathways overall**
+- 12 pathways were enriched toward TNBC
+- 14 pathways were enriched toward Normal tissue
+- 26 pathways were significant overall
 
-The strongest TNBC-associated pathways included:
+### Major TNBC-associated pathways
 
-- **G2M Checkpoint**
-- **E2F Targets**
-- **mTORC1 Signaling**
-- **MYC Targets**
-- **Glycolysis**
-- **Mitotic Spindle**
+- G2M Checkpoint
+- E2F Targets
+- mTORC1 Signaling
+- MYC Targets
+- Glycolysis
+- Mitotic Spindle
 
-The strongest Normal-associated pathways included:
+### Major Normal-associated pathways
 
-- **Adipogenesis**
-- **Myogenesis**
-- **Fatty Acid Metabolism**
-- **Oxidative Phosphorylation**
-- **Xenobiotic Metabolism**
-- **Bile Acid Metabolism**
+- Adipogenesis
+- Myogenesis
+- Fatty Acid Metabolism
+- Oxidative Phosphorylation
+- Xenobiotic Metabolism
+- Bile Acid Metabolism
 
-![Hallmark GSEA of top pathways](Figures/GSEA/Hallmark_GSEA_Top_Pathways.png)
+These results provide pathway-level support for the proliferation-versus-metabolic interpretation of the candidate panel.
+
+---
+
+# 11. ROC/AUC Analysis
+
+`Scripts/11_ROC_AUC_Analysis.R`
+
+ROC/AUC analysis was used to evaluate the ability of individual genes and molecular signatures to distinguish TNBC from Normal samples.
+
+### Individual candidate genes
+
+| Gene | AUC | Direction |
+|---|---:|---|
+| BUB1 | 0.942 | Higher in TNBC |
+| CIDEC | 0.942 | Lower in TNBC |
+| CDC20 | 0.937 | Higher in TNBC |
+| LEP | 0.934 | Lower in TNBC |
+| LIPE | 0.934 | Lower in TNBC |
+| PNPLA2 | 0.915 | Lower in TNBC |
+| PLK1 | 0.896 | Higher in TNBC |
+| AURKB | 0.896 | Higher in TNBC |
+| PPARG | 0.870 | Lower in TNBC |
+| TRIP13 | 0.870 | Higher in TNBC |
+
+The two molecular signatures showed:
+
+- **Proliferation signature AUC = 1.00**
+- **Metabolic signature AUC = 1.00**
+
+The same AUC values were observed for both signatures in the independent GSE52194 cohort.
+
+Because the discovery and independent cohorts are small, these AUC values should be interpreted as evidence of strong cohort separation rather than estimates of clinical diagnostic performance.
+
+---
+
+# 12. Protein-Protein Interaction and Network Analysis
+
+`Scripts/12_network_analysis.R`
+
+The ten candidate genes were evaluated using STRING-based protein-protein interaction information.
+
+The high-confidence candidate network contained:
+
+- **10 nodes**
+- **18 edges**
+- Average node degree = **3.6**
+- Local clustering coefficient = **0.933**
+- Expected number of edges = **1**
+- PPI enrichment p-value = **3.13 × 10⁻¹⁴**
+
+This indicates that the candidate genes form a highly interconnected network compared with the number of interactions expected by chance within the STRING framework.
+
+### Network organization
+
+The network contains two prominent molecular programs:
+
+**Proliferation**
+
+- CDC20
+- BUB1
+- TRIP13
+- PLK1
+- AURKB
+
+**Metabolic**
+
+- PNPLA2
+- PPARG
+- LIPE
+- LEP
+- CIDEC
+
+Network analysis provides additional evidence that the selected genes are not an arbitrary collection of differentially expressed genes but participate in coherent interaction structures.
+
+---
+
+# 13. TCGA-BRCA Survival Analysis
+
+`Scripts/13_Survival_Analysis.R`
+
+The ten candidate genes were evaluated for association with overall survival using TCGA-BRCA.
+
+The analysis included:
+
+- **1,073 patients**
+- **150 observed deaths**
+- **923 censored observations**
+
+For each gene, patients were divided into high- and low-expression groups using the median expression level.
+
+The analysis included:
+
+- Kaplan-Meier survival analysis
+- Log-rank testing
+- Cox proportional hazards regression
+- 95% confidence intervals
+- Benjamini-Hochberg FDR correction
+
+## Main finding
+
+PLK1 showed the strongest nominal association with overall survival:
+
+- Hazard ratio = **1.46**
+- 95% CI = **1.06–2.02**
+- Cox p = **0.021**
+- FDR = **0.214**
+
+Thus, higher PLK1 expression was associated with increased mortality risk in the unadjusted Cox analysis, but this association did **not** remain statistically significant after correction for testing ten candidate genes.
+
+AURKB and PNPLA2 showed suggestive trends but did not reach nominal statistical significance:
+
+- AURKB: HR = 1.34, p = 0.073
+- PNPLA2: HR = 0.75, p = 0.078
+
+These survival findings should therefore be considered exploratory.
+
+---
+
+# 14. Drug–Target Analysis
+
+`Scripts/14_drug_target_analysis.R`
+
+DGIdb-based drug–target analysis was performed to add a translational layer to the prioritized ten-gene panel.
+
+The analysis:
+
+- Queried the DGIdb GraphQL API for the candidate genes
+- Retrieved reported drug–gene interactions
+- Assigned candidate genes to the predefined proliferation or metabolic programs
+- Removed incomplete and duplicate interaction records
+- Summarized drug associations at the gene and drug levels
+- Identified drugs associated with more than one prioritized candidate gene
+- Generated candidate-gene drug-association and multi-target network visualizations
+
+### Results
+
+The analysis identified:
+
+- **7 of the 10 candidate genes** with reported drug associations
+- **472 unique drugs**
+- **487 drug–gene interaction records**
+- **7 multi-target drugs** associated with more than one prioritized candidate gene
+
+### Gene-level drug associations
+
+| Gene | Molecular program | Associated drugs | Interactions |
+|---|---|---:|---:|
+| PLK1 | Proliferation | 189 | 190 |
+| PPARG | Metabolic | 169 | 173 |
+| AURKB | Proliferation | 83 | 86 |
+| LEP | Metabolic | 24 | 24 |
+| BUB1 | Proliferation | 6 | 6 |
+| LIPE | Metabolic | 5 | 5 |
+| PNPLA2 | Metabolic | 3 | 3 |
+
+PLK1 had the largest number of recorded drug associations, followed by PPARG and AURKB.
+
+### Multi-target drugs
+
+Seven compounds were associated with more than one prioritized candidate gene:
+
+| Drug | Candidate genes | Molecular program(s) |
+|---|---|---|
+| AMORFRUTIN A | PLK1, PPARG | Proliferation, Metabolic |
+| BENZBROMARONE | PLK1, PPARG | Proliferation, Metabolic |
+| CHEMBL:CHEMBL184450 | PLK1, PPARG | Proliferation, Metabolic |
+| ESTRADIOL VALERATE | LEP, PPARG | Metabolic |
+| GW7647 | PLK1, PPARG | Proliferation, Metabolic |
+| NVP-TAE684 | AURKB, PLK1 | Proliferation |
+| TROGLITAZONE | LEP, PPARG | Metabolic |
+
+The multi-target network highlights recurring relationships between the prioritized genes, particularly PLK1–PPARG and AURKB–PLK1.
+
+These database-reported associations are **hypothesis-generating**. They do not establish therapeutic efficacy, drug sensitivity, or clinical suitability in TNBC.
+
+### Drug–Target Outputs
+
+- `Results/Drug_Target/`
+- `Figures/Drug_Target/Candidate_Gene_Drug_Counts.png`
+- `Figures/Drug_Target/Multi_Target_Drug_Network.png`
 
 ---
 
 # Key Findings
 
-## Differential Expression
+## 1. Strong proliferative transcriptional program
 
-The analysis identified extensive transcriptional differences between Normal and TNBC samples.
+TNBC samples showed increased expression of genes and pathways associated with:
 
-| Category | Number |
-|---|---:|
-| Genes analyzed | 39,376 |
-| Upregulated genes | 2,011 |
-| Downregulated genes | 2,218 |
-
-### Volcano Plot
-
-![Differential expression volcano plot](Figures/Volcano_Plot_TNBC_vs_Normal.png)
-
-The volcano plot summarizes the magnitude and statistical significance of differential gene expression. The analysis shows a substantial number of significantly upregulated and downregulated genes in TNBC relative to Normal tissue.
-
----
-
-# Upregulated Molecular Program
-
-The upregulated genes were strongly enriched for processes involving:
-
-- Nuclear division
-- Mitotic nuclear division
-- Sister chromatid segregation
+- Mitotic division
 - Chromosome segregation
-- Cell-cycle checkpoint signaling
+- Cell-cycle checkpoints
+- G2M checkpoint
+- E2F targets
+- MYC targets
+- Mitotic spindle activity
 
-The strongest GO Biological Process enrichment was:
+The proliferation-associated candidates CDC20, BUB1, TRIP13, PLK1, and AURKB capture this program at the gene level.
 
-**Nuclear division — adjusted p-value = 1.63 × 10⁻²²**
+## 2. Reduced lipid-associated and metabolic program
 
-The strongest KEGG pathway was:
-
-**Cell cycle — adjusted p-value = 1.15 × 10⁻¹⁴**
-
-Together, these results indicate a strong **proliferative and mitotic transcriptional program** in the TNBC samples.
-
-### Prioritized upregulated genes
-
-- **CDC20**
-- **BUB1**
-- **TRIP13**
-- **PLK1**
-- **AURKB**
-
-### GO Biological Process — Upregulated Genes
-
-![GO enrichment of upregulated genes](Figures/GO_BP_Upregulated.png)
-
-### KEGG Pathway Enrichment — Upregulated Genes
-
-![KEGG enrichment of upregulated genes](Figures/KEGG_Upregulated.png)
-
----
-
-# Downregulated Molecular Program
-
-Downregulated genes were enriched for metabolic, hormonal, and lipid-associated processes.
-
-Important biological processes included:
-
-- Fatty acid metabolic process
-- Regulation of hormone levels
-- Adaptive thermogenesis
-- Retinol metabolism
-- Muscle-related processes
-- Circulatory and vascular processes
-
-KEGG analysis showed enrichment of pathways including:
-
-- PPAR signaling
-- Regulation of lipolysis in adipocytes
-- Steroid hormone biosynthesis
-- Retinol metabolism
-- Fatty acid degradation
-- Adipocytokine signaling
-
-The strongest reported metabolic pathway associations included:
-
-**PPAR signaling — adjusted p-value = 2.58 × 10⁻⁵**
-
-**Regulation of lipolysis in adipocytes — adjusted p-value = 2.58 × 10⁻⁵**
-
-These findings suggest altered **lipid-associated and metabolic transcriptional programs** in TNBC.
-
-### Prioritized downregulated genes
-
-- **PNPLA2**
-- **PPARG**
-- **LIPE**
-- **LEP**
-- **CIDEC**
-
-### GO Biological Process — Downregulated Genes
-
-![GO enrichment of downregulated genes](Figures/GO_BP_Downregulated.png)
-
-### KEGG Pathway Enrichment — Downregulated Genes
-
-![KEGG enrichment of downregulated genes](Figures/KEGG_Downregulated.png)
-
----
-
-# Key Biological Interpretation
-
-Taken together, the results suggest that the TNBC transcriptional state examined in this cohort is characterized by two major molecular programs:
-
-### 1. Increased proliferation
-
-The upregulated gene set was strongly associated with:
-
-- Mitotic nuclear division
-- Chromosome segregation
-- Sister chromatid segregation
-- Cell-cycle checkpoint signaling
-- Cell-cycle pathway activity
-
-The prioritized genes **CDC20, BUB1, TRIP13, PLK1, and AURKB** represent the proliferation-associated component of the candidate panel.
-
-### 2. Reduced lipid-associated metabolism
-
-The downregulated gene set showed strong enrichment for:
+The TNBC samples showed reduced expression of genes and pathways associated with:
 
 - Fatty acid metabolism
-- Lipid-associated processes
-- Hormone regulation
 - PPAR signaling
 - Lipolysis
-- Steroid and retinol metabolism
+- Adipogenesis
+- Steroid metabolism
+- Retinol metabolism
+- Oxidative phosphorylation
 
-The prioritized genes **PNPLA2, PPARG, LIPE, LEP, and CIDEC** represent the metabolic-associated component.
+The metabolic-associated candidates PNPLA2, PPARG, LIPE, LEP, and CIDEC capture this transcriptional program.
 
-Together, these findings support a model in which the analyzed TNBC samples exhibit increased proliferative activity alongside reduced lipid-associated metabolic activity.
+## 3. Independent replication is partial
 
-A more detailed biological interpretation is provided in:
+The independent GSE52194 analysis reproduced the original expression direction for **8 of the 10 genes**.
 
-`Interpretation/biological_interpretation.md`
+LEP and CIDEC did not reproduce the discovery direction.
+
+Therefore, the independent validation supports the overall molecular programs but does not provide complete gene-level replication.
+
+## 4. Molecular signatures show strong cohort separation
+
+Both the proliferation and metabolic signatures strongly separated TNBC from Normal samples in the discovery cohort and showed significant separation in the independent cohort.
+
+This supports the use of the two programs as exploratory molecular summaries of the transcriptional differences observed in the analysis.
+
+## 5. Candidate genes form a coherent interaction network
+
+The ten genes formed a highly connected STRING network with 18 observed interactions compared with approximately 1 expected interaction.
+
+The strong PPI enrichment supports functional coherence among the selected candidates.
+
+## 6. Survival analysis identifies PLK1 as an exploratory prognostic candidate
+
+PLK1 showed the strongest nominal association with overall survival in TCGA-BRCA.
+
+However, its FDR-adjusted p-value was not significant.
+
+Therefore:
+
+> PLK1 should be considered an exploratory survival-associated candidate rather than a validated prognostic biomarker.
 
 ---
 
-# Final 10-Gene Candidate Panel
+# Final Ten-Gene Candidate Panel
 
-The final candidate panel consists of two major molecular groups:
-
-| Molecular program | Candidate genes |
+| Molecular program | Genes |
 |---|---|
-| Proliferation / mitosis | **CDC20, BUB1, TRIP13, PLK1, AURKB** |
-| Lipid / metabolic | **PNPLA2, PPARG, LIPE, LEP, CIDEC** |
+| Proliferation / mitosis | CDC20, BUB1, TRIP13, PLK1, AURKB |
+| Lipid / metabolic | PNPLA2, PPARG, LIPE, LEP, CIDEC |
 
-The candidates showed significant expression differences between Normal and TNBC samples after multiple-testing correction.
-
-## Candidate Gene Expression
-
-### Heatmap
-
-![Expression heatmap of the final 10 candidate genes](Figures/Final_10_Gene_Heatmap.png)
-
-The heatmap shows the relative expression patterns of the ten prioritized candidates across the analyzed samples.
-
-### Boxplots
-
-![Expression boxplots of the final 10 candidate genes](Figures/Final_10_Gene_Boxplots.png)
-
-The boxplots provide gene-level comparisons of expression between Normal and TNBC samples.
+The panel captures two biologically contrasting transcriptional programs associated with the analyzed TNBC samples.
 
 ---
 
-# TNBC-Specific Correlation Analysis
-
-Correlation analysis among the ten candidates was performed using the **eight TNBC samples**.
-
-Several proliferation-associated genes showed strong positive correlations:
-
-- **BUB1–TRIP13:** r = 0.98
-- **TRIP13–PLK1:** r = 0.97
-- **PLK1–AURKB:** r = 0.95
-
-Several metabolic-associated genes also showed strong positive correlations:
-
-- **LIPE–CIDEC:** r = 0.95
-- **LEP–CIDEC:** r = 0.95
-- **PNPLA2–LIPE:** r = 0.93
-
-Several relationships between the proliferation-associated and metabolic-associated genes were negative.
-
-### Correlation Heatmap
-
-![TNBC candidate-gene correlation heatmap](Figures/TNBC_10_Gene_Correlation_Heatmap.png)
-
-These correlations provide exploratory evidence that the prioritized genes may form coordinated expression programs within the TNBC samples.
-
----
-
-# PCA and Sample-Level Exploration
-
-### PCA
-
-![PCA of Normal and TNBC samples](Figures/PCA_Normal_vs_TNBC.png)
-
-The PCA provides an overview of global transcriptomic variation among the analyzed samples and helps visualize the overall structure of the Normal and TNBC expression profiles.
-
----
-
-# Results
+# Results Directory
 
 The `Results/` directory contains:
 
-- Complete DESeq2 results
+- DESeq2 differential-expression results
 - Upregulated and downregulated gene lists
 - Annotated DEGs
 - GO enrichment results
@@ -424,9 +548,38 @@ The `Results/` directory contains:
 - Statistical validation results
 - TNBC correlation matrix
 - Independent validation results
-- Molecular signature scores and statistical tests
+- Molecular signature scores
 - Hallmark GSEA results
-- TNBC-enriched and Normal-enriched GSEA pathways
+- ROC/AUC results
+- Network interaction results
+- Network centrality results
+- PPI enrichment results
+- TCGA-BRCA survival results
+- DGIdb drug–target interaction results
+- Gene-level and drug-level DGIdb summaries
+- Multi-target drug interaction results
+
+---
+
+# Figures Directory
+
+The `Figures/` directory contains:
+
+- PCA plots
+- Volcano plots
+- GO enrichment plots
+- KEGG enrichment plots
+- Candidate-gene heatmaps
+- Candidate-gene boxplots
+- Correlation heatmaps
+- Molecular signature figures
+- GSEA figures
+- ROC/AUC figures
+- PPI/network figures
+- Kaplan-Meier survival plots
+- Cox survival forest plot
+- DGIdb candidate-gene drug-association plot
+- Multi-target drug–candidate gene network
 
 ---
 
@@ -436,9 +589,13 @@ The `Results/` directory contains:
 tnbc-transcriptomic-analysis/
 │
 ├── Data/
-│   ├── Raw data
-│   └── GSEA/
-│       └── h.all.v2026.1.Hs.symbols.gmt
+│   ├── GSE233242_raw_counts_GRCh38.p13_NCBI.tsv.gz
+│   ├── GSE233242_Sample_ID_to_GEO_ids.csv.gz
+│   ├── Human.GRCh38.p13.annot.tsv.gz
+│   ├── GSEA/
+│   │   └── h.all.v2026.1.Hs.symbols.gmt
+│   └── Independent_Validation/
+│       └── E-GEOD-52194-raw-counts.tsv
 │
 ├── Scripts/
 │   ├── 01_explore_data.R
@@ -449,17 +606,28 @@ tnbc-transcriptomic-analysis/
 │   ├── 06_visualization.R
 │   ├── 07_independent_validation.R
 │   ├── 08_molecular_signatures.R
-│   └── 09_GSEA.R
+│   ├── 09_GSEA.R
+│   ├── 11_ROC_AUC_Analysis.R
+│   ├── 12_network_analysis.R
+│   ├── 13_Survival_Analysis.R
+│   └── 14_drug_target_analysis.R
 │
 ├── Results/
-│   ├── Analysis result tables
 │   ├── Molecular_Signatures/
-│   └── GSEA/
+│   ├── GSEA/
+│   ├── Independent_Validation/
+│   ├── ROC_AUC/
+│   ├── Network/
+│   ├── Survival/
+│   └── Drug_Target/
 │
 ├── Figures/
-│   ├── Analysis visualizations
 │   ├── Molecular_Signatures/
-│   └── GSEA/
+│   ├── GSEA/
+│   ├── Gene_Pathway_Integration/
+│   ├── Network/
+│   ├── Survival/
+│   └── Drug_Target/
 │
 ├── Interpretation/
 │   └── biological_interpretation.md
@@ -473,51 +641,56 @@ tnbc-transcriptomic-analysis/
 
 # Reproducibility
 
-The analysis is organized into sequential R scripts that should be executed in the following order:
+The analysis was performed in R.
 
-```text
-01_explore_data.R
-        ↓
-02_differential_expression.R
-        ↓
-03_functional_enrichment.R
-        ↓
-04_candidate_prioritization.R
-        ↓
-05_candidate_validation.R
-        ↓
-06_visualization.R
-        ↓
-07_independent_validation.R
-        ↓
-08_molecular_signatures.R
-        ↓
-09_GSEA.R
-```
-
-The project uses **GSE233242** as the source dataset.
-
-The analysis was performed in R using packages including:
+Major packages used throughout the workflow include:
 
 - DESeq2
+- Biobase
 - pheatmap
 - clusterProfiler
 - org.Hs.eg.db
 - fgsea
+- dplyr
+- igraph
+- survival
+- survminer
+- ggplot2
+- httr2
+- tidyr
+- stringr
 
-Raw sequencing/count data are excluded from Git tracking where appropriate using `.gitignore`.
+The drug–target analysis queries the **DGIdb GraphQL API** for reported drug–gene associations.
+
+The discovery analysis is based on GSE233242.
+
+The independent validation uses GSE52194.
+
+Network analysis uses STRING interaction information.
+
+Survival analysis uses TCGA-BRCA expression and survival data.
+
+Large raw datasets are excluded from Git tracking where appropriate using `.gitignore`.
 
 ---
 
 # Limitations
 
-1. The final analysis included only **16 samples: 8 Normal and 8 TNBC**.
-2. The analysis identifies transcriptomic associations and does not establish causal relationships.
-3. Independent validation was performed using GSE52194, but the validation cohort was small (3 Normal and 5 TNBC samples).
-4. TNBC-specific correlation analysis was based on only eight TNBC samples and should therefore be considered exploratory.
-5. The ten genes should be considered **candidate markers rather than clinically validated biomarkers**.
-6. Independent validation using larger cohorts and experimental studies is required.
-7. The candidate panel should be considered hypothesis-generating rather than a clinically established molecular signature.
+1. The discovery cohort contains only 16 samples: 8 Normal and 8 TNBC.
+2. The independent validation cohort is also small, containing 3 Normal and 5 TNBC samples.
+3. Independent validation reproduced the direction of 8/10 genes but not all candidates.
+4. Molecular signature AUC values were calculated in small cohorts and should not be interpreted as estimates of clinical diagnostic performance.
+5. ROC/AUC analyses describe discrimination within the analyzed datasets and do not establish clinical utility.
+6. TNBC-specific correlation analysis was based on only eight TNBC samples and is exploratory.
+7. Network analysis is based on STRING-derived interactions and does not establish physical interaction or causal relationships experimentally.
+8. TCGA-BRCA survival analysis included 1,073 patients but only 150 observed deaths.
+9. Survival analysis used median expression groups and was not adjusted for clinical covariates.
+10. PLK1 showed a nominal survival association but did not remain significant after multiple-testing correction.
+11. The ten genes should be considered candidate markers rather than clinically validated biomarkers.
+12. The candidate panel should be considered hypothesis-generating rather than an established clinical molecular signature.
+13. DGIdb associations represent database-reported drug–gene relationships and do not establish therapeutic efficacy or clinical suitability.
+14. Drug–target coverage is incomplete for the ten-gene panel because only 7 candidates returned usable interactions in the analyzed DGIdb query.
+15. Larger independent cohorts and experimental studies are required for further validation.
 
 ---
 
@@ -525,22 +698,27 @@ Raw sequencing/count data are excluded from Git tracking where appropriate using
 
 This transcriptomic analysis identified extensive molecular differences between Normal and TNBC breast tissue.
 
-The results consistently highlighted two major transcriptional programs:
+Across differential expression, functional enrichment, GSEA, candidate prioritization, molecular signature analysis, independent validation, ROC/AUC analysis, network analysis, and survival analysis, the results consistently point toward two major transcriptional programs:
 
 **Enhanced cell-cycle and proliferative activity**
 
 and
 
-**Reduced lipid-associated and metabolic activity.**
+**Reduced lipid-associated and metabolic activity**
 
-The prioritized ten-gene panel captures both components:
+The final ten-gene panel captures these contrasting programs:
 
 **CDC20, BUB1, TRIP13, PLK1, AURKB, PNPLA2, PPARG, LIPE, LEP, and CIDEC.**
 
-These genes and associated pathways provide a biologically coherent set of candidates for further investigation and independent validation.
+The independent validation reproduced the expression direction of 8 of the 10 genes and supported the broader molecular-program framework.
 
-The analysis is intended as a **computational and hypothesis-generating study**, rather than a clinical biomarker validation study. Independent validation and molecular signature analysis further supported the distinction between the proliferation-associated and lipid/metabolic programs.
+The two molecular signatures demonstrated strong separation between TNBC and Normal samples in both analyzed cohorts, while the candidate genes formed a highly interconnected STRING network.
 
-Hallmark GSEA provided pathway-level evidence consistent with these findings, with cell-cycle, E2F, MYC, mTORC1, glycolytic, and mitotic programs enriched toward TNBC, while adipogenic and lipid/metabolic programs were enriched toward Normal tissue.
+In TCGA-BRCA survival analysis, PLK1 showed the strongest nominal association with overall survival. However, the association did not remain significant after multiple-testing correction.
 
-Together, these analyses provide a multi-level computational framework connecting differential expression, candidate-gene prioritization, independent validation, molecular signatures, and pathway-level enrichment.
+DGIdb drug–target analysis added a translational layer, identifying reported drug associations for 7 candidate genes and highlighting PLK1, PPARG, and AURKB as candidates with substantial existing drug-association coverage. Several multi-target compounds connected candidate genes across the proliferation and metabolic programs. These findings are hypothesis-generating and do not establish therapeutic efficacy.
+
+Taken together, the results provide a multi-level computational framework connecting differential expression, functional enrichment, candidate-gene prioritization, molecular signatures, independent validation, network structure, classification performance, and survival association.
+
+The findings are intended to generate testable biological hypotheses and candidate markers for further investigation rather than to establish clinically validated biomarkers.
+
