@@ -1,0 +1,3 @@
+"Signature","AUC","CI_Lower","CI_Upper","Direction"
+"Proliferation_Score",1,1,1,"Higher in TNBC"
+"Metabolic_Score",1,1,1,"Lower in TNBC"
