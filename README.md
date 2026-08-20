@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project presents a reproducible transcriptomic analysis of **Triple-Negative Breast Cancer (TNBC)** integrating differential expression, functional enrichment, candidate-gene prioritization, independent validation, molecular signature analysis, pathway-level analysis, ROC/AUC evaluation, protein-protein interaction analysis, and survival analysis.
+This project presents a reproducible transcriptomic analysis of **Triple-Negative Breast Cancer (TNBC)** integrating differential expression, functional enrichment, candidate-gene prioritization, independent validation, molecular signature analysis, pathway-level analysis, ROC/AUC evaluation, protein-protein interaction analysis, survival analysis and drug-target analysis.
 
 The primary discovery analysis compares matched Normal breast tissue and TNBC samples from **GEO dataset GSE233242**.
 
